@@ -131,7 +131,7 @@ function createClientConfig(env: Env): Configuration {
 		},
 
 		output: {
-			path: path.resolve(__dirname, "dist", "public"),
+			path: path.resolve(__dirname, "dist"),
 			filename: env.production
 				? "js/[name].[chunkhash].js"
 				: "js/[name].js",
@@ -151,7 +151,7 @@ function createClientConfig(env: Env): Configuration {
 						loader: "file-loader",
 						options: {
 							outputPath: "images",
-							publicPath: "./images",
+							publicPath: "./",
 							name: "[name].[contenthash].[ext]",
 						},
 					},

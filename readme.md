@@ -10,9 +10,11 @@ This template has the following main dependencies:
 * [Express](https://expressjs.com/)
 * [Webpack](https://webpack.js.org/)
 * [Jest](https://jestjs.io/)
+* [SuperTest](https://www.npmjs.com/package/supertest)
 ---
 
 ### Instalation
+1. Clone the repo: `https://github.com/marceloaugusto80/react-ssr-express.git`
 2. Install dependencies: 
 ``` bash
 $ npm install
@@ -38,6 +40,12 @@ $ npm run build:prod
 $ npm test
 ```
 
-### Mock Up File
-![alt text](https://i.ibb.co/z5FsZ2L/mockup.png)
-  
+#### Compilation output
+After compilation, all output will be available in the `./dist` folder. The server logic will be bundled in the `./dist/app.js` file and client assets will be in the `./dist/public/` folder.
+
+### Client vs Server side branching
+The global variable `__SERVER__` will be set to `true` if the code was compiled to target the server (Node) environment. Otherwise, it will have a value of `false`.
+
+
+---
+Any bug or improvement, please let me know.
