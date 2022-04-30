@@ -40,7 +40,7 @@ $ npm run build:prod
 $ npm test
 ```
 
-#### Compilation output
+#### Compilation outputs
 After compilation, all output will be available in the `./dist` folder. The server logic will be bundled in the `./dist/app.js` file and client assets will be in the `./dist/public/` folder.
 
 ### Client vs Server side branching
