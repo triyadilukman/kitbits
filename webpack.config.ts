@@ -151,7 +151,7 @@ function createClientConfig(env: Env): Configuration {
 						loader: "file-loader",
 						options: {
 							outputPath: "images",
-							publicPath: "./",
+							publicPath: "./images",
 							name: "[name].[contenthash].[ext]",
 						},
 					},
