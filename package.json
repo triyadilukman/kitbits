@@ -13,7 +13,8 @@
     "test": "npx jest",
     "build:prod": "npx webpack --env PRODUCTION",
     "start:client": "npx webpack serve --config-name client --env HOT",
-    "start:server": "npx concurrently \"npx webpack -w\" \"npx nodemon ./dist/app.js\""
+    "start:server": "npx concurrently \"npx webpack -w\" \"npx nodemon ./dist/app.js\"",
+    "start": "npx nodemon ./dist/app.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
