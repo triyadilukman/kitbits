@@ -16,14 +16,39 @@ export default function HomePage() {
 	return (
 		<Box className={campaignWpSty}>
 			<Helmet>
-			<link rel="author" href="Kitabisa" />
-<link rel="canonical" href="https://kitabisa.com" />
-<link rel="alternate" href="android-app://com.kitabisa.android/https://www.kitabisa.com" />
-<link rel="alternate" href="ios-app://1458307938/Kitabisa/https://www.kitabisa.com" />
-<link rel="shortcut icon" type="image/png" href="https://assets.kitabisa.cc/images/icons/meta/favicon.ico" />
-<link rel="icon" type="image/png" sizes="16x16" href="https://assets.kitabisa.cc/images/icons/meta/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="https://assets.kitabisa.cc/images/icons/meta/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="https://assets.kitabisa.cc/images/icons/meta/android-chrome-192x192.png" />
+				<link rel="author" href="Kitabisa" />
+				<link rel="canonical" href="https://kitabisa.com" />
+				<link
+					rel="alternate"
+					href="android-app://com.kitabisa.android/https://www.kitabisa.com"
+				/>
+				<link
+					rel="alternate"
+					href="ios-app://1458307938/Kitabisa/https://www.kitabisa.com"
+				/>
+				<link
+					rel="shortcut icon"
+					type="image/png"
+					href="https://assets.kitabisa.cc/images/icons/meta/favicon.ico"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="https://assets.kitabisa.cc/images/icons/meta/favicon-16x16.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="https://assets.kitabisa.cc/images/icons/meta/favicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="192x192"
+					href="https://assets.kitabisa.cc/images/icons/meta/android-chrome-192x192.png"
+				/>
 				<title>
 					Kitabisa.com - Indonesia&#x27;s Fundraising Platform
 				</title>

@@ -1,8 +1,8 @@
-# SSR: Typescript + React + Router + Express + Jest
+## About The Project
+This project based on kitabisa campaign project
 
-**React server side rendering with persistent server data**
 
-This template has the following main dependencies:
+# This project using stacks
 * [Typescript](https://www.typescriptlang.org/)
 * [React](https://reactjs.org/)
 * [React Router](https://github.com/remix-run/react-router)
@@ -13,39 +13,58 @@ This template has the following main dependencies:
 * [SuperTest](https://www.npmjs.com/package/supertest)
 ---
 
-### Instalation
-1. Clone the repo: `https://github.com/marceloaugusto80/react-ssr-express.git`
-2. Install dependencies: 
-``` bash
-$ npm install
+## Important folders
+```sh
+src/
+├── client                      # folder related to client
+  ├── components                # dumb components folder.
+  ├── context                   # state management, actions, data types of context.
+  ├── resources                 # static files resources.
+  ├── utils                     # shareable method, library etc.
+  ├── app.tsx                   # React router client handler
+  ├── index.tsx                 # Client side wrapper / passing for data providers
+├── server                      # folder related to server script
+  ├── middleware                # related to handlers of server side routing, api call, error handler etc
+  ├── ssr                       # related to html template generator
+  ├── app.ts                    # file call server script to start
+  ├── configuration.ts          # PUBLIC DIR settings
+  ├── server.ts                 # init call server side handlers
 ```
 
-### Usage
+## Getting Started
+To run this app eed to get involve in some steps below
 
-Use one of the following commands:
-* run server in watch mode:
-``` bash
-$ npm run start:server
-```
-* run client app in dev server with Hot Reload:
-``` bash
-$ npm run start:client
-```
-* build the application for production:
-``` bash
-$ npm run build:prod
-```
-* test:
-``` bash
-$ npm test
-```
+### Prerequisites
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-#### Compilation outputs
-After compilation, all output will be available in the `./dist` folder. The server logic will be bundled in the `./dist/app.js` file and client assets will be in the `./dist/public/` folder.
+### Run The App 
+1. Clone the repo
+   ```sh
+   git clone git@github.com:triyadilukman/website-test.git
+   ```
+2. Install NPM packages using yarn
+   ```sh
+   npm install
+   ```
+3. Run this project
+   ```sh
+   npm run start:server
+   ```
+   it will show and ready to run at your browser for SSR:
+   ```
+   Local:            http://localhost:9000
+   ```
+4. Build project
+   ```sh
+   npm run build:prod
+   ```
+5. Start build files
+   ``sh
+   npm run start
+   ```
 
-### Client vs Server side branching
-The global variable `__SERVER__` will be set to `true` if the code was compiled to target the server (Node) environment. Otherwise, it will have a value of `false`.
-
-
----
-Any bug or improvement, please let me know.
+### Project Mockup
+![alt text](https://i.ibb.co/nkHsR5p/mockup.png)
