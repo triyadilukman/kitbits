@@ -14,7 +14,7 @@
     "build": "npx webpack --env PRODUCTION",
     "start:client": "npx webpack serve --config-name client --env HOT",
     "start:server": "npx concurrently \"npx webpack -w\" \"npx nodemon ./dist/app.js\"",
-    "start": "npx nodemon ./dist/app.js"
+    "start": "npx nodemon ./dist/368.app.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
