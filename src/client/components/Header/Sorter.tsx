@@ -9,7 +9,7 @@ import { sorterSty } from "./styles";
 export default function Sorter() {
 	const { dispatch, state } = useCampaignContext();
 	const handleChangeSort = (event: any) => {
-		dispatch(sortByHandler(event.target.value, state.data));
+		dispatch(sortByHandler(event.target.value, state.initialData));
 	};
 
 	return (

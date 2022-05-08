@@ -13,17 +13,28 @@ interface Props {
 	name: string;
 	received: number;
 	day: number;
-  percent: number;
+	percent: number;
 }
 
 const Card: React.FC<Props> = ({ imgUrl, name, received, day, percent }) => {
+	const onImageError = (e: any) => {
+		e.target.src = 'http://www.fpoimg.com/634x357'
+	}
 	return (
 		<Box className={cardSty}>
-			<Box className={imgBoxSty(imgUrl)} />
+			<Box className={imgBoxSty}>
+				<img src={imgUrl} onError={onImageError} />
+			</Box>
 			<Flex className={contentWpSty}>
-				<Text className="text-bold">{name}</Text>
+				<Text className="text-bold" height="48px">
+					{name}
+				</Text>
 				<Box>
-					<Progress colorScheme="pink" size="sm" value={percent * 100} />
+					<Progress
+						colorScheme="pink"
+						size="sm"
+						value={percent * 100}
+					/>
 				</Box>
 				<Box>
 					<Flex justifyContent="space-between" marginTop="32px">
@@ -31,10 +42,10 @@ const Card: React.FC<Props> = ({ imgUrl, name, received, day, percent }) => {
 						<Text className="text-bold">Sisa Hari</Text>
 					</Flex>
 					<Flex justifyContent="space-between">
-						<Text className="text-bold" color="#E0E0E0">
+						<Text className="text-bold" color="#13a8e5">
 							{toIDR(received)}
 						</Text>
-						<Text className="text-bold" color="#E0E0E0">
+						<Text className="text-bold" color="#737373">
 							{day ? day : "Selesai"}
 						</Text>
 					</Flex>

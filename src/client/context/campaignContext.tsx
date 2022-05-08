@@ -1,5 +1,8 @@
-import React, { createContext, useReducer, useContext, useMemo } from "react";
-import { PrerenderData } from "shared/PrerenderedData";
+import React, {
+	createContext,
+	useReducer,
+	useContext,
+} from "react";
 
 import {
 	ICampaign,
@@ -21,30 +24,16 @@ const CampaignProvider: React.FC<ICampaignProviderParam> = ({
 	children,
 	campaigns,
 }) => {
-	const [state, dispatch] = useReducer(reducer, initialCampaignState);
-
-	const prerenderData =
-		PrerenderData.readFromDom<IServerDataContextType>(true);
-	const campaignsClient = prerenderData?.state?.data;
-
-	const campaignsMemo = useMemo(() => {
-		if (campaigns?.length) {
-			return campaigns;
-		}
-		if (campaignsClient?.length) {
-			return campaignsClient;
-		}
-		return state.data;
-	}, [campaigns, campaignsClient]);
+	const [state, dispatch] = useReducer(reducer, {
+		...initialCampaignState,
+		initialData: campaigns || [],
+		data: campaigns || [],
+	});
 
 	return (
 		<CampaignContext.Provider
 			value={{
-				state: {
-					...state,
-					data: campaignsMemo,
-					initialData: campaigns || campaignsClient || [],
-				},
+				state,
 				dispatch,
 			}}
 		>
@@ -57,7 +46,7 @@ const useCampaignContext = () => {
 	const context = useContext(CampaignContext);
 	if (!context) {
 		throw new Error(
-			"useProductDispatchContext must be used within a ProductListDispatch"
+			"useCampaignContext must be used within a CampaignContext"
 		);
 	}
 	return context;

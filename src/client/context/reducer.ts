@@ -7,18 +7,17 @@ export default function campaignReducer(
 ) {
 	switch (action.type) {
 		case ActionType.SortBy: {
-			const { sortBy, data } = action.payload;
-			const field = sortBy === 'goal' ? 'donation_percentage' : 'days_remaining'
-      let dataTemp = data;
+			const { sortBy } = action.payload;
 
-			dataTemp = data.sort(
-				(a, b) => a[field] - b[field]
-			);
+			const field = sortBy === 'goal' ? 'donation_percentage' : 'days_remaining';
+      const dataTemp = [...state.initialData];
 
 			return {
 				...state,
 				sortBy,
-				data: dataTemp
+				data: sortBy ? dataTemp.sort(
+					(a, b) => a[field] - b[field]
+				) : state.initialData,
 			};
 		}
 

@@ -6,7 +6,6 @@ import Header from "client/components/Header";
 import CampaignList from "client/pages/CampaignList";
 
 import { CampaignProvider } from "client/context/campaignContext";
-
 import { ICampaign } from "client/context/types";
 
 import { wrapperSty } from "./app-styles";

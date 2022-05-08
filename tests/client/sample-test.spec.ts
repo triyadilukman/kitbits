@@ -7,9 +7,7 @@
 describe("Sample", () => {
     
     test("sample test", () => {
-    
         expect(window).toBeDefined();
-    
     });
 
 });

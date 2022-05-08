@@ -9,11 +9,12 @@ export const cardSty = css`
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 `;
 
-export const imgBoxSty = (image: string) => css`
-  background-image: url(${image});
-  background-repeat: no-repeat;
-  background-size: 100%;
+export const imgBoxSty = css`
   height: 200px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
 `;
 
 export const contentWpSty = css`

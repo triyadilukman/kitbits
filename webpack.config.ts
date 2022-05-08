@@ -6,6 +6,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { merge } from "webpack-merge";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
 interface Env {
@@ -39,6 +40,11 @@ function createServerConfig(env: Env): Configuration {
 		target: "node",
 
 		context: path.resolve(__dirname, "src/server"),
+		
+		optimization: {
+			minimize: true,
+			minimizer: [new TerserPlugin()],
+		},
 
 		externalsPresets: {
 			node: true,
@@ -119,11 +125,10 @@ function createClientConfig(env: Env): Configuration {
 		target: "web",
 
 		context: path.resolve(__dirname, "src/client"),
-
+	
 		optimization: {
-			splitChunks: {
-				chunks: "all",
-			},
+			minimize: true,
+			minimizer: [new TerserPlugin()],
 		},
 
 		entry: {
