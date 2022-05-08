@@ -18,7 +18,9 @@ interface Props {
 
 const Card: React.FC<Props> = ({ imgUrl, name, received, day, percent }) => {
 	const onImageError = (e: any) => {
-		e.target.src = 'http://www.fpoimg.com/634x357'
+		setTimeout(() => {
+			e.target.src = 'http://www.fpoimg.com/634x357';
+		}, 300);
 	}
 	return (
 		<Box className={cardSty}>
@@ -45,8 +47,8 @@ const Card: React.FC<Props> = ({ imgUrl, name, received, day, percent }) => {
 						<Text className="text-bold" color="#13a8e5">
 							{toIDR(received)}
 						</Text>
-						<Text className="text-bold" color="#737373">
-							{day ? day : "Selesai"}
+						<Text className="text-bold" color={day ? "#d53f8c" : "#737373"}>
+							{day ? `${day} Hari` : "Selesai"}
 						</Text>
 					</Flex>
 				</Box>
